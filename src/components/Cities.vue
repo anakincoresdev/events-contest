@@ -1,7 +1,7 @@
 <template>
   <section class="nominations">
     <div class="container">
-      <h2 class="nominations__title">
+      <h2 class="nominations__title app-title">
         Выберите город
       </h2>
       <div class="flex items-start center justify-center">
@@ -10,7 +10,7 @@
             v-for="(item, i) of nominationsFirst"
             :key="i"
             :class="{'selected': item.value === selected}"
-            class="nominations__item"
+            class="nominations__item menu-item"
             @click="select(item.value)"
           >
             {{ item.label }}
@@ -43,7 +43,7 @@
             v-for="(item, i) of nominationsSecond"
             :key="i"
             :class="{'selected': item.value === selected}"
-            class="nominations__item"
+            class="nominations__item menu-item"
             @click="select(item.value)"
           >
             {{ item.label }}
@@ -130,15 +130,12 @@ export default {
   }
 
   &__item {
-    font-size: 24px;
     width: 100%;
     text-transform: uppercase;
     padding: 10px 0;
     cursor: pointer;
 
     &:hover, &.selected {
-      border-top: 2px solid yellow;
-      border-bottom: 2px solid yellow;
       padding: 8px 0;
     }
   }

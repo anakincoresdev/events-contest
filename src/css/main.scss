@@ -1,3 +1,28 @@
+@font-face {
+  // название шрифта(чтобы не запутаться лучше указать название папки со шрифтом)
+  font-family: "Sverdlovsk";
+  // адрес шрифта и тип
+  src: url('~@/assets/fonts/Sverdlovsk.otf') format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: local('Geometria Thin'), local('Geometria-Thin'),
+  url('~@/assets/fonts/geometria/Geometria-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: local('Geometria'), local('Geometria'),
+  url('~@/assets/fonts/geometria/Geometria.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -43,4 +68,24 @@ body {
 
 .no-margin {
   margin: 0;
+}
+
+.app-title {
+  font-family: Sverdlovsk;
+  letter-spacing: 10px;
+  margin: 0 0 80px;
+  font-size: 60px;
+  font-weight: 100;
+}
+
+.menu-item {
+  font-size: 32px;
+  font-family: Sverdlovsk;
+  letter-spacing: 5px;
+
+  &.selected, &:hover {
+    color: #9E9A73;
+    border-top: 2px solid #9E9A73;
+    border-bottom: 2px solid #9E9A73;
+  }
 }

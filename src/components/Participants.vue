@@ -1,7 +1,7 @@
 <template>
   <section class="participants">
     <div class="container">
-      <h2 class="participants__title">
+      <h2 class="participants__title app-title">
         Участники
       </h2>
       <div class="participants__items">

@@ -88,13 +88,17 @@ export default {
 
     &__title {
       font-size: 288px;
-      margin: 150px 0 0;
+      margin: 150px 0 0 100px;
       line-height: 0.8;
       font-weight: 100;
+      font-family: Sverdlovsk;
+      letter-spacing: 100px;
+      text-align: center;
     }
 
     &__subtitle {
       font-weight: 100;
+      font-size: 30px;
     }
   }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <nominations
-      v-if="step === 'nominations'"
-      @next="next('cities')"
-    />
+    <template v-if="step === 'nominations'">
+      <nominations @next="toCities" />
+      <new-participant-form />
+    </template>
     <cities
       v-else-if="step === 'cities'"
       @prev="next('nominations')"
@@ -20,6 +20,7 @@
 import Nominations from '@/components/Nominations.vue';
 import Cities from '@/components/Cities.vue';
 import Participants from '@/components/Participants.vue';
+import NewParticipantForm from '@/components/NewParticipantForm.vue';
 
 export default {
   name: 'HomeMain',
@@ -27,10 +28,12 @@ export default {
     Nominations,
     Cities,
     Participants,
+    NewParticipantForm,
   },
   data() {
     return {
       step: 'nominations',
+      nomination: null,
       city: null,
     };
   },
@@ -39,8 +42,12 @@ export default {
       this.step = step;
     },
     toParticipants(city) {
-      this.step = 'participants';
       this.city = city;
+      this.step = 'participants';
+    },
+    toCities(nomination) {
+      this.nomination = nomination;
+      this.step = 'cities';
     },
   },
 };
